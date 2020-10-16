@@ -2,7 +2,8 @@
 Node.js minimal and powerful ebook converter (single package) with built in queue and threading functionalities. With a few steps, you can converts ebooks and other documents to any format wanted. You can also define custom properties defined at [Calibre Documentation](https://manual.calibre-ebook.com/generated/en/ebook-convert.html). **Atention:** This library is not responsable for the convertion algorithm, only the wrapper, queue system, threading and pooling.
 
 # How to use it?
-First, install the package through NPM (Node Package Manager) as it follows:
+First, you need to install Calibre official conversion package, as this library work as a full-featured wrapper for it. To install it, access [Calibre Site](https://calibre-ebook.com/). (There are CLI and GUI versions).<br/><br/>
+Second, install the package through NPM (Node Package Manager) as it follows:
 ```
 npm i node-ebook-converter
 ```
@@ -10,7 +11,7 @@ If you use yarn as your package manager:
 ```
 yarn add node-ebook-converter
 ```
-
+<br/>
 After installing the library, you must import it inside your .js (JavaScript) file and start converting ebooks:
 ```javascript
 const ebookConverter =  require('node-ebook-converter');
