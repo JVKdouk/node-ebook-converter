@@ -1,8 +1,8 @@
 # Node E-Book Converter
-Node.js minimal and powerful ebook converter (single package) with built in queue and threading functionalities. With a few steps, you can converts ebooks and other documents to any format wanted. You can also define custom properties defined at [Calibre Documentation](https://manual.calibre-ebook.com/generated/en/ebook-convert.html). **Atention:** This library is not responsable for the convertion algorithm, only the wrapper, queue system, threading and pooling.
+Node.js minimal and powerful ebook converter (single package) with built in queue and threading functionalities. With a few steps, you can convert ebooks and other documents to any format wanted. You can also define custom properties defined at [Calibre Documentation](https://manual.calibre-ebook.com/generated/en/ebook-convert.html). **Atention:** This library is not responsable for the convertion algorithm, only the wrapper, queue system, threading and pooling.
 
 # How to use it?
-First, you need to install Calibre official conversion package, as this library work as a full-featured wrapper for it. To install it, access [Calibre Site](https://calibre-ebook.com/). (There are CLI and GUI versions).<br/><br/>
+First, you need to install Calibre official conversion package, as this library work as a full-featured wrapper for it. To install it, access [Calibre Website](https://calibre-ebook.com/). (There are CLI and GUI versions).<br/><br/>
 Second, install the package through NPM (Node Package Manager) as it follows:
 ```
 npm i node-ebook-converter
@@ -59,7 +59,7 @@ ebookConverter.setThreadPoolSize(2); // Allows 2 conversions to run simultaneous
 If more ebooks are added than the thread pool size, it will be stored in the Idle Queue to be processed later.
 
 # Queue
-This package comes with a built-in library system, allowing the user to add infinitely many conversions and limit the number of those that can occur concurrently. The size of the **Execution Queue** (Thread Pool Size) is defined through the ```setThreadPoolSize``` described above. If more convertions are called than the allowed by the Thread Pool Size, it will be stored in the **Idle Queue** to be processed later. This is a event based lightweight implementation of the queue process.
+This package comes with a built-in library system, allowing the user to add infinitely many conversions and limit the number of those that can occur concurrently. The size of the **Execution Queue** (Thread Pool Size) is defined through the ```setThreadPoolSize``` described above. If more convertions are called than the allowed by the Thread Pool Size, it will be stored in the **Idle Queue** to be processed later. This is an event-based and lightweight implementation of the queue process.
 
 # Contributing
 This package is built under the MIT license. For the long-term support, you can contribute to this project by openning issues in the "Issue" tab in the GitHub platform, submit Pull Requests, and give tips on building this package. If you want me to keep doing this kind of job, help me by [buying me a coffee!](https://www.buymeacoffee.com/JVKdouk)<br/><br/>
