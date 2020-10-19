@@ -24,7 +24,7 @@ ebookConverter.convert({
   .catch(error => console.error(error));
 ```
 This example takes a pdf at ```"./input/bear.pdf"``` and converts it to an epub (specified in the output extension) at ```"./output/bear.epub"```.
-**To specifiy the output extension, you just need to specify the extension in the output attribute of the conversion object.
+**To specifiy the output extension, you just need to specify the extension in the output attribute of the conversion object.**
 
 # Convertion Attributes
 You can specify attributes before starting your convertion. The list can be found in the following table:
@@ -51,10 +51,10 @@ ebookConverter.convert({
   .catch(error => console.error(error));
 ```
 
-## setThreadPoolSize
+## setPoolSize
 Changes the thread pool size, allowing the execution of n thread simultaneously. Can be used through the following structure:
 ```javascript
-ebookConverter.setThreadPoolSize(2); // Allows 2 conversions to run simultaneously.
+ebookConverter.setPoolSize(2); // Allows 2 conversions to run simultaneously.
 ```
 If more ebooks are added than the thread pool size, it will be stored in the Idle Queue to be processed later.
 

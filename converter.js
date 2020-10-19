@@ -21,7 +21,7 @@ parentPort.once('message', (value) => {
 
     if (!(fs.existsSync(inputPath))) throw new Error(`Input path ${inputPath} not found!`);
 
-    const command = `ebook-convert ${inputPath} ${outputPath}`;
+    const command = `ebook-convert "${inputPath}" "${outputPath}"`;
     const startTime = new Date();
     
     console.log(`Converting ${inputPath}...`);
@@ -31,7 +31,7 @@ parentPort.once('message', (value) => {
             value.port.postMessage({ ...params, message, duration: new Date - startTime });
             value.port.close();
 
-            if (params.delete) fs.unlink(inputPath, (err) => { if (err) throw err; });
+            if (params.delete === true) fs.unlink(inputPath, (err) => { if (err) throw err; });
         })
         .catch(err => { throw err; });
 });
