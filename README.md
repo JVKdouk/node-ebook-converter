@@ -11,7 +11,6 @@ If you use yarn as your package manager:
 ```
 yarn add node-ebook-converter
 ```
-<br/>
 After installing the library, you must import it inside your .js (JavaScript) file and start converting ebooks:
 ```javascript
 const ebookConverter =  require('node-ebook-converter');
@@ -23,7 +22,7 @@ ebookConverter.convert({
 }).then(response => console.log(response))
   .catch(error => console.error(error));
 ```
-This example takes a pdf at ```"./input/bear.pdf"``` and converts it to an epub (specified in the output extension) at ```"./output/bear.epub"```.
+This example takes a pdf at "./input/bear.pdf" and converts it to an epub (specified in the output extension) at "./output/bear.epub".
 **To specifiy the output extension, you just need to specify the extension in the output attribute of the conversion object.**
 
 # Convertion Attributes
