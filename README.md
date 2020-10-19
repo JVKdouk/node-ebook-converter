@@ -51,10 +51,10 @@ ebookConverter.convert({
   .catch(error => console.error(error));
 ```
 
-## setPoolSize
+## setThreadPoolSize
 Changes the thread pool size, allowing the execution of n thread simultaneously. Can be used through the following structure:
 ```javascript
-ebookConverter.setPoolSize(2); // Allows 2 conversions to run simultaneously.
+ebookConverter.setThreadPoolSize(2); // Allows 2 conversions to run simultaneously.
 ```
 If more ebooks are added than the thread pool size, it will be stored in the Idle Queue to be processed later.
 
