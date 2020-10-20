@@ -1,7 +1,12 @@
 const { Worker, isMainThread, MessageChannel } = require('worker_threads');
 const path = require('path');
 
-let threadPoolSize = 1;
+/* 
+    Pool related variables. poolSize defines simultaneous processing limit,
+    executionQueue stores running workers, and idleQueue stores idle workers.
+*/
+
+let poolSize = 1;
 let executionQueue = [];
 let idleQueue = [];
 
@@ -19,7 +24,7 @@ function convert (data) {
     }
 
     const refreshExecutionQueue = () => {
-        if (executionQueue.length >= threadPoolSize || idleQueue.length === 0) return;
+        if (executionQueue.length >= poolSize || idleQueue.length === 0) return;
         const item = idleQueue[0];
         executionQueue.push(item);
         item.worker.postMessage({ port: item.port }, [item.port]);
@@ -30,7 +35,7 @@ function convert (data) {
         data.input = path.resolve(require.main.path, data.input);
         data.output = path.resolve(require.main.path, data.output);
 
-        const worker = new Worker(path.join(__dirname, './converter.js'), { env: { ...data } });
+        const worker = new Worker(path.join(__dirname, './src/converter.js'), { env: { ...data } });
         const channel = new MessageChannel();
 
         channel.port2.on('message', value => resolve(value));
@@ -42,4 +47,4 @@ function convert (data) {
 }
 
 exports.convert = convert;
-exports.setPoolSize = (value) => { threadPoolSize = value };
+exports.setPoolSize = (value) => { poolSize = value };

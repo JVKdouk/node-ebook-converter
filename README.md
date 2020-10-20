@@ -18,7 +18,8 @@ const ebookConverter =  require('node-ebook-converter');
 /* Adds the convertion to the Execution Queue */
 ebookConverter.convert({
   input: "./input/bear.pdf",
-  output: "./output/bear.epub"
+  output: "./output/bear.epub",
+  authors: "Probably a bear..."
 }).then(response => console.log(response))
   .catch(error => console.error(error));
 ```
@@ -33,8 +34,9 @@ You can specify parameters before starting your conversion. The list can be foun
 | input | false | string | Defines the input file to be converted (any extension) |
 | output | false | string | Defines where to save the converted file to the specified extension (should contain the extension to convert in it) |
 | delete | true | boolean | Deletes the input file when the conversion is done |
+| silent | true | boolean | In this mode, library does not print messages |
 
-**Currently the library does not have support to many Calibre flags. Soon we will finish importing all of them!** (Help me do that, please)
+**Those are only the parameters created to this package. node-ebook-converter supports all native flags. You can find all of them in the following link:** [https://manual.calibre-ebook.com/generated/en/ebook-convert.html]()
 
 # Methods
 Currently, there are two methods in this package:
