@@ -25,8 +25,8 @@ ebookConverter.convert({
 This example takes a pdf at "./input/bear.pdf" and converts it to an epub (specified in the output extension) at "./output/bear.epub".
 **To specifiy the output extension, you just need to specify the extension in the output attribute of the conversion object.**
 
-# Convertion Attributes
-You can specify attributes before starting your convertion. The list can be found in the following table:
+# Convestion Parameters
+You can specify parameters before starting your conversion. The list can be found in the following table:
 
 | Attribute | Optional | Type | Description |
 | ------------- |:-------------:| -----:|:---------:|
@@ -58,7 +58,7 @@ ebookConverter.setPoolSize(2); // Allows 2 conversions to run simultaneously.
 If more ebooks are added than the thread pool size, it will be stored in the Idle Queue to be processed later.
 
 # Queue
-This package comes with a built-in library system, allowing the user to add infinitely many conversions and limit the number of those that can occur concurrently. The size of the **Execution Queue** (Thread Pool Size) is defined through the ```setThreadPoolSize``` described above. If more convertions are called than the allowed by the Thread Pool Size, it will be stored in the **Idle Queue** to be processed later. This is an event-based and lightweight implementation of the queue process.
+This package comes with a built-in library system, allowing the user to add infinitely many conversions and limit the number of those that can occur concurrently. The size of the **Execution Queue** (Thread Pool Size) is defined through the ```setPoolSize``` described above. If more conversions are called than the allowed by the Thread Pool Size, it will be stored in the **Idle Queue** to be processed later. This is an event-based and lightweight implementation of the queue process.
 
 # Contributing
 This package is built under the MIT license. For the long-term support, you can contribute to this project by openning issues in the "Issue" tab in the GitHub platform, submit Pull Requests, and give tips on building this package. If you want me to keep doing this kind of job, help me by [buying me a coffee!](https://www.buymeacoffee.com/JVKdouk)<br/><br/>
