@@ -17,7 +17,8 @@ parentPort.once('message', (value) => {
     /* Add flag params to conversion command */
     Object.keys(process.env).forEach(key => {
         if (nonFlagParams.indexOf(key) > -1) return;
-        command += ` --${key}="${process.env[key]}"`;
+        if (process.env[key] === true) command += ` --${key}`;
+        else command += ` --${key}="${process.env[key]}"`;
     });
     
     if (params.silent !== 'true') console.log(`Converting ${inputPath}...`);
