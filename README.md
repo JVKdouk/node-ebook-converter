@@ -26,7 +26,7 @@ ebookConverter.convert({
 This example takes a pdf at "./input/bear.pdf" and converts it to an epub (specified in the output extension) at "./output/bear.epub".
 **To specifiy the output extension, you just need to specify the extension in the output attribute of the conversion object.**
 
-# Convestion Parameters
+# Convertion Parameters
 You can specify parameters before starting your conversion. The list can be found in the following table:
 
 | Attribute | Optional | Type | Description |
