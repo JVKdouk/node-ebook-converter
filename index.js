@@ -40,7 +40,7 @@ function convert (data) {
 
         channel.port2.on('message', value => resolve(value));
         channel.port2.on('close', () => removeWorkerFromQueue(worker.threadId));
-        worker.on('error', error => reject(error));
+        worker.on('exit', error => reject(error));
 
         addWorkerToQueue({ ...data, worker, port: channel.port1 });
     });
