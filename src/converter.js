@@ -31,5 +31,5 @@ parentPort.once('message', (value) => {
 
             if (params.delete === 'true') fs.unlink(inputPath, (err) => { if (err) throw err; });
         })
-        .catch(err => { throw err; });
+        .catch(() => { process.exit(1) });
 });
