@@ -32,9 +32,6 @@ function convert (data) {
     }
 
     return new Promise((resolve, reject) => {
-        data.input = path.resolve(require.main.path, data.input);
-        data.output = path.resolve(require.main.path, data.output);
-
         const worker = new Worker(path.join(__dirname, './src/converter.js'), { env: { ...data } });
         const channel = new MessageChannel();
 
